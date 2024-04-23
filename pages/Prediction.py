@@ -1,5 +1,5 @@
 import streamlit as st
-import pickle
+import pickle5 as pickle
 from PIL import Image
 
 def main():
