@@ -2,4 +2,4 @@
 streamlit==1.32.2
 streamlit-option-menu==0.3.12
 pandas 
-pickle
+pickle5
