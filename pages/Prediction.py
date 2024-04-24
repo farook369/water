@@ -1,6 +1,7 @@
 import streamlit as st
 import pickle
 from PIL import Image
+import joblib
 
 def main():
 
@@ -19,7 +20,8 @@ def main():
     Turbidity = st.text_input("Turbidity",help="Measure of light emiting property of water in NTU")
     features=[ph,Hardness,Solids,Chloramines,Sulfate,Conductivity,Organic_carbon,Trihalomethanes,Turbidity]
     scaler = pickle.load(open('scaler.sav', 'rb'))
-    model = pickle.load(open('rf_model.sav', 'rb'))
+    # model = pickle.load(open('rf_model.sav', 'rb'))
+    model= joblib.load('rf_model.sav')
     pred=st.button('PRDICT')
     if pred:
         result = model.predict(scaler.transform([features]))
